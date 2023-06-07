@@ -41,7 +41,6 @@ async function getProducts() {
   console.log("okay from the server");
   return products;
 }
-
 async function getFeaturedProducts() {
   return db.select().from(product).where(eq(product.featured, true));
 }
