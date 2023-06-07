@@ -38,6 +38,7 @@ export default async function Home() {
 
 async function getProducts() {
   const products = db.select().from(product);
+  console.log("okay from the server");
   return products;
 }
 
