@@ -1,5 +1,4 @@
 import MobileMenu from "@/components/headers/mobileMenu";
-import { SignedIn, SignIn, UserButton, useUser } from "@clerk/nextjs";
 import Image from "next/image";
 export default function Header() {
   return (
@@ -16,9 +15,6 @@ export default function Header() {
           height={40}
           className="w-auto h-10"
         />
-        <SignedIn>
-          <UserButton />
-        </SignedIn>
       </header>
     </>
   );

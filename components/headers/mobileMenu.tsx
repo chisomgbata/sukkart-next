@@ -3,7 +3,6 @@ import { Fragment, useState } from "react";
 import { Transition, Dialog } from "@headlessui/react";
 import XMark from "@/components/icons/x";
 import MenuIcon from "@/components/icons/menu";
-import { SignedIn, SignedOut, SignInButton, UserButton } from "@clerk/nextjs";
 export default function MobileMenu() {
   let [open, setOpen] = useState(false);
 
@@ -49,12 +48,6 @@ export default function MobileMenu() {
                 </button>
               </div>
               <div className="px-4">wow links</div>
-              <SignedIn>
-                <UserButton />
-              </SignedIn>
-              <SignedOut>
-                <SignInButton />
-              </SignedOut>
             </div>
           </Transition.Child>
         </Dialog>
