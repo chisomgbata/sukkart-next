@@ -1,8 +1,12 @@
 import "./globals.css";
-import { Inter } from "next/font/google";
+import { Comfortaa } from "next/font/google";
 import Header from "@/components/layout/header";
+import { ClerkProvider } from "@clerk/nextjs";
 
-const inter = Inter({ subsets: ["latin"] });
+const comfortaa = Comfortaa({
+  weight: ["400", "500", "700"],
+  subsets: ["latin"],
+});
 
 export const metadata = {
   title: "Sukkart",
@@ -16,10 +20,14 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${inter.className} px-4`}>
-        <Header />
-        {children}
-      </body>
+      <ClerkProvider>
+        <body className={`${comfortaa.className}`}>
+          <Header />
+          <main className="p-4 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            {children}
+          </main>
+        </body>
+      </ClerkProvider>
     </html>
   );
 }

@@ -11,7 +11,9 @@
   "dependencies": {
     "@clerk/nextjs": "^4.19.1",
     "@headlessui/react": "^1.7.15",
+    "@heroicons/react": "v1",
     "@planetscale/database": "^1.7.0",
+    "@tailwindcss/aspect-ratio": "^0.4.2",
     "@types/node": "20.2.5",
     "@types/react": "18.2.8",
     "@types/react-dom": "18.2.4",

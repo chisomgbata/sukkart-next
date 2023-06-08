@@ -16,31 +16,12 @@ export default async function Home() {
   }
   const products = await getProducts();
   const featuredProducts = await getFeaturedProducts();
-  return (
-    <>
-      <div>
-        {products.map((product) => (
-          <div key={product.id}> {product.name}</div>
-        ))}
-      </div>
-      Featured ********
-      <div>
-        {featuredProducts.map((product) => (
-          <div key={product.id}> {product.name}</div>
-        ))}
-      </div>
-      <form action={addProduct}>
-        <button type="submit">create</button>
-      </form>
-    </>
-  );
+  return <>Sukkart</>;
 }
 
 async function getProducts() {
-  const products = db.select().from(product);
-  console.log("okay from the server");
-  return products;
+  return [];
 }
 async function getFeaturedProducts() {
-  return db.select().from(product).where(eq(product.featured, true));
+  return [];
 }
