@@ -1,5 +1,5 @@
 import MobileMenu from "@/components/headers/mobileMenu";
-import Image from "next/image";
+import Logo from "@/components/icons/logo";
 export default function Header() {
   return (
     <>
@@ -8,13 +8,7 @@ export default function Header() {
       "
       >
         <MobileMenu />
-        <Image
-          src="/sukkart.svg"
-          alt="Sukkart "
-          width={100}
-          height={40}
-          className="w-auto h-10"
-        />
+        <Logo />
       </header>
     </>
   );
