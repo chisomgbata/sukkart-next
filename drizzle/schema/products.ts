@@ -1,3 +1,4 @@
+import { InferModel } from "drizzle-orm";
 import {
   boolean,
   int,
@@ -22,3 +23,6 @@ export const product = mysqlTable("product", {
   createdAt: timestamp("created_at"),
   updatedAt: timestamp("updated_at"),
 });
+
+export type NewProduct = InferModel<typeof product, "insert">;
+export type Product = InferModel<typeof product>;

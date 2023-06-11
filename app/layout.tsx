@@ -1,9 +1,10 @@
 import "./globals.css";
-import { Comfortaa } from "next/font/google";
+import { Poppins } from "next/font/google";
 import Header from "@/components/layout/header";
 import { ClerkProvider } from "@clerk/nextjs";
+import PromoBanner from "@/components/layout/banner";
 
-const comfortaa = Comfortaa({
+const poppins = Poppins({
   weight: ["400", "500", "700"],
   subsets: ["latin"],
 });
@@ -21,7 +22,8 @@ export default function RootLayout({
   return (
     <html lang="en">
       <ClerkProvider>
-        <body className={`${comfortaa.className}`}>
+        <body className={`${poppins.className}`}>
+          <PromoBanner />
           <Header />
           <main className="p-4 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             {children}
