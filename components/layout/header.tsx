@@ -54,9 +54,8 @@ export default function Header() {
 
               {/* Cart */}
               <div className="ml-4 flow-root lg:ml-6">
-                <Suspense fallback={<Loading />}>
+              
                   <Cart />
-                </Suspense>
               </div>
             </div>
           </div>

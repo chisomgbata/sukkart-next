@@ -14,7 +14,7 @@ export const metadata = {
   description: "The No.1 Ecommerce store in Nsukka",
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: {
   children: React.ReactNode;

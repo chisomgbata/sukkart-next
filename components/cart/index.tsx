@@ -6,16 +6,17 @@ import { eq } from "drizzle-orm";
 import { cookies } from "next/headers";
 
 export default async function Cart() {
-  const cookie = cookies().get("guestId");
-  const { userId } = auth();
-  const user = userId || cookie?.value;
-
-  // const cart = user ? await getCart(user) : [];
-  const cart: any[] = [];
-
-  return <CartButton cookie={cookie?.value} cart={cart} />;
+  const user = getUser();
+  const cart = user ? await getCart(user) : [];
+  return <CartButton cart={cart} />;
 }
 
-function getCart(user: string) {
+export function getCart(user: string | undefined) {
+  if (!user) return [];
   return db.select().from(cart).where(eq(cart.user, user));
+}
+
+function getUser() {
+  const { userId } = auth();
+  return userId || cookies().get("guestId")?.value;
 }

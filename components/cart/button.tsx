@@ -1,24 +1,8 @@
 "use client";
 import CartIcon from "@/components/icons/cart";
 import { Cart } from "@/drizzle/schema/cart";
-import { useCookies } from "react-cookie";
 
-export default function CartButton({
-  cookie,
-  cart,
-}: {
-  cookie: string | undefined;
-  cart: Cart[];
-}) {
-  const [, setCookie] = useCookies(["guestId"]);
-  if (!cookie) {
-    setCookie("guestId", generateGuestId(), {
-      path: "/",
-      sameSite: "strict",
-      secure: process.env.NODE_ENV === "production",
-      maxAge: 31536000,
-    });
-  }
+export default function CartButton({ cart }: { cart: Cart[] }) {
   return (
     <div className="relative ">
       <CartIcon />{" "}
